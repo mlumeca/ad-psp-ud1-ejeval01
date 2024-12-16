@@ -1,4 +1,4 @@
-package com.salesianostriana.dam.resteval;
+package com.salesianostriana.dam.resteval.model;
 
 import lombok.*;
 
@@ -22,7 +22,6 @@ public class Place {
     private List<String> tags = new ArrayList<>();
     private String image;
 
-
     public void addTag(String tag) {
 
         if (tags.stream().noneMatch(t -> t.equalsIgnoreCase(tag)))
@@ -33,9 +32,4 @@ public class Place {
     public void removeTag(String tag) {
         tags.removeIf(t -> t.equalsIgnoreCase(tag));
     }
-
-
-
-
-
 }
