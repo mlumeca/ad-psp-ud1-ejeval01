@@ -4,6 +4,7 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -18,32 +19,32 @@ public class PlaceRepository {
     @PostConstruct
     public void init() {
         // Añadir aquí datos de ejemplo
-        Place p1 = Place.builder()
+        add(
+        Place.builder()
                 .name("El Rinconcillo")
                 .address("Calle 1")
                 .coords("aaa")
                 .desc("Buen bar")
                 .image("https//foto1.jpeg")
-                .build();
-        add(p1);
+                .tags(new ArrayList<>(List.of("Triana", "Clasico")))
+                .build()
 
-        Place p2 = Place.builder()
+        Place.builder()
                 .name("Otro rincón")
                 .address("Calle 2")
                 .coords("bbb")
                 .desc("Bar regulín")
                 .image("https//foto2.jpeg")
-                .build();
-        add(p2);
+                .build()
 
-        Place p3 = Place.builder()
+        Place.builder()
                 .name("El Rincon de Paco")
                 .address("Calle 3")
                 .coords("ccc")
                 .desc("Bar malo")
                 .image("https//foto3.jpeg")
-                .build();
-        add(p3);
+                .build()
+        );
     }
 
     public Place add(Place place) {

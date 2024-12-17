@@ -1,5 +1,6 @@
 package com.salesianostriana.dam.resteval.dto;
 
+import com.salesianostriana.dam.resteval.model.Place;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,24 +11,21 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 
+// Mejor llamarlo GetPlaceDto
 public class PlaceDto {
+    public Long id;
     public String name;
-    public String address;
     public String coords;
-    public String description;
     public String image;
 
     //metodo de transformacion
-
-    @Override
-    public String toString() {
-        return "PlaceDto{" +
-                "name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", coords='" + coords + '\'' +
-                ", description='" + description + '\'' +
-                ", image='" + image + '\'' +
-                '}';
+    public static PlaceDto fromPlace(Place place) {
+        return new PlaceDto(
+                place.getId();
+                place.getName();
+                place.getCoords();
+                place.getImage();
+        )
     }
 
 }

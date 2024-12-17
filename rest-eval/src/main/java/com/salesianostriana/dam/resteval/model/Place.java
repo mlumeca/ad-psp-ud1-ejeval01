@@ -26,7 +26,6 @@ public class Place {
 
         if (tags.stream().noneMatch(t -> t.equalsIgnoreCase(tag)))
             tags.add(tag);
-
     }
 
     public void removeTag(String tag) {
